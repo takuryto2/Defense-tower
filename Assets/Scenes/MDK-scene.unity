@@ -164,6 +164,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: {fileID: 1008795196}
+  enemys:
+  - {fileID: 8537415494267526291, guid: 8a209c4b6fe64aa44b98bace7c645b8e, type: 3}
+  enemysAvailable: 
+  enemysToSpawn: 1
+  timeBetweenSpawns: 0
 --- !u!1 &244785339
 GameObject:
   m_ObjectHideFlags: 0

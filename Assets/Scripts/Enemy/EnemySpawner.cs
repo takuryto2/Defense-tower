@@ -20,8 +20,13 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int i = 0; i < enemysToSpawn; i++)
         {
-            GameObject enemySpawned = Instantiate(enemys[Random.Range(0, enemys.Count - 1)], transform.position,
-                Quaternion.identity, this.transform);
+            Debug.Log("spawn");
+
+
+            GameObject enemySpawned = Instantiate(enemys[Random.Range(0, enemys.Count - 1)], transform.position, Quaternion.identity, this.transform);
+            Enemy eS = enemySpawned.GetComponent<Enemy>();
+            eS.path = path;
+            eS.nextNode = eS.path.node[0];
             
             yield return new WaitForSeconds(0.5f);
         }

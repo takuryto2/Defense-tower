@@ -4,7 +4,7 @@ using UnityEngine;
 public class SO_Enemy : ScriptableObject
 {
     public int hp;
-    public float spd;
     public int atk;
+    public float spd;
     public int gold;
 }

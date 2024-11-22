@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "SO_Turret", menuName = "Scriptable Objects/SO_Turret")]
+[CreateAssetMenu(fileName = "SO_Turret", menuName = "Scriptable Objects/SO_Turret", order = 2)]
 public class SO_Turret : ScriptableObject
 {
     public int atk;

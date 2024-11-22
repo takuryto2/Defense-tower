@@ -384,7 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nbWave: 0
-  waves: {fileID: 0}
+  waves: {fileID: 11400000, guid: e9ea84e084834ca43bc8f2f053744d98, type: 2}
 --- !u!4 &578397064
 Transform:
   m_ObjectHideFlags: 0

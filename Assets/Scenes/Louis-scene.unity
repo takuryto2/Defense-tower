@@ -164,9 +164,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: {fileID: 1008795196}
-  enemies:
+  enemys:
   - {fileID: 8537415494267526291, guid: 8a209c4b6fe64aa44b98bace7c645b8e, type: 3}
-  enemiesToSpawn: 14000000
+  enemysAvailable: 32000000
+  enemysToSpawn: 10
   timeBetweenSpawns: 3
 --- !u!1 &244785339
 GameObject:
@@ -348,6 +349,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainTurret
       objectReference: {fileID: 0}
+    - target: {fileID: 452000512208408974, guid: 6d78d1fe70de0534f8f94ef56c4d4414, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1796700862594730565, guid: 6d78d1fe70de0534f8f94ef56c4d4414, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -388,6 +393,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4287202779890857793, guid: 6d78d1fe70de0534f8f94ef56c4d4414, type: 3}
+      propertyPath: health
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 9065966395103526962, guid: 6d78d1fe70de0534f8f94ef56c4d4414, type: 3}
+      propertyPath: test
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9065966395103526962, guid: 6d78d1fe70de0534f8f94ef56c4d4414, type: 3}
+      propertyPath: balistaCollider
+      value: 
+      objectReference: {fileID: 1641405673}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -706,6 +723,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1008795197}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1641405673 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 6361383077342599872, guid: 6d78d1fe70de0534f8f94ef56c4d4414, type: 3}
+  m_PrefabInstance: {fileID: 507442616}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1808539552
 GameObject:
   m_ObjectHideFlags: 0

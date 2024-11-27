@@ -1,18 +1,20 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    public int hp;
-    public float spd;
-    public int atk;
-    public int gold;
+    [HideInInspector] public int hp;
+    [HideInInspector] public float spd;
+    [HideInInspector] public int atk;
+    [HideInInspector] public int gold;
 
-    public int lastNode;
-
-    public Transform nextNode;
-    public Path path;
+    [HideInInspector] public int lastNode;
+    [HideInInspector] public Transform nextNode;
+    [HideInInspector] public Path path;
 
     public SO_Enemy SO_Enemy;
+    [SerializeField] SpriteRenderer renderer;
 
     private void Awake()
     {
@@ -37,9 +39,20 @@ public class Enemy : MonoBehaviour
             }
             nextNode = path.node[lastNode];
         }
-        if (hp <= 0)
-        {
+    }
+
+    public void takeDamage(int damage)
+    {
+        hp -= damage;
+        if (hp <= 0) {
             Destroy(gameObject);
         }
+        StartCoroutine(ChangeColor());
+    }
+
+    private IEnumerator ChangeColor() {
+        renderer.color = Color.red;
+        yield return new WaitForSeconds(0.32f);
+        renderer.color = Color.white;
     }
 }

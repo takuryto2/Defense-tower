@@ -55,6 +55,7 @@ MonoBehaviour:
   nextNode: {fileID: 0}
   path: {fileID: 0}
   SO_Enemy: {fileID: 11400000, guid: 9b84f23b50a2b11478ca483e6312debd, type: 2}
+  renderer: {fileID: 1649444474856074026}
 --- !u!61 &8325484269734438757
 BoxCollider2D:
   m_ObjectHideFlags: 0

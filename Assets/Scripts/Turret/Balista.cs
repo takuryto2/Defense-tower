@@ -8,6 +8,7 @@ public class Balista : MonoBehaviour
     [SerializeField] private float Atkspd;
     [SerializeField] private float minRange;
     [SerializeField] private float maxRange;
+    [SerializeField] private GameObject projectile;
     private bool isMono;
     
     [Header("Colider")]
@@ -16,55 +17,49 @@ public class Balista : MonoBehaviour
     private float closestTarget ;
     private bool coroutineRunning;
 
-    private void Start()
-    {
+    private void Start() {
         closestTarget = maxRange;
+        projectile.SetActive(false);
     }
 
-    private void Update()
-    {
-        if (targets.Count > 0 && !coroutineRunning)
-        {
+    private void Update() {
+        if (targets.Count > 0 && !coroutineRunning) {
             StartCoroutine(Attack());
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Enemy"))
-        {
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.gameObject.CompareTag("Enemy")) {
             targets.Add(other);
             if (targets.Count > 1) {
                 CompareDistance();
             }
         }
-        
     }
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        targets.Remove(other); if (targets.Count <= 0){
+    private void OnTriggerExit2D(Collider2D other) {
+        targets.Remove(other); if (targets.Count <= 0) {
             balistaCollider.radius = maxRange;
             closestTarget = maxRange;
         }
     }
     
-    private void CompareDistance()
-    {
-        foreach (Collider2D t in targets)
-        {
+    private void CompareDistance() {
+        foreach (Collider2D t in targets) {
             float distance = Vector3.Distance(t.transform.position, transform.position);
-            if (distance < closestTarget){
+            if (distance < closestTarget) {
                 closestTarget = distance;
                 balistaCollider.radius = closestTarget;
             }
         }
     }
-    private IEnumerator Attack()
-    {
+    private IEnumerator Attack() {
         coroutineRunning = true;
-        targets[0].GetComponent<Enemy>().hp -= Atk;
+        projectile.SetActive(true);
         LookAt();
-        yield return new WaitForSeconds(Atkspd);
+        targets[0].GetComponent<Enemy>().takeDamage(Atk);
+        yield return new WaitForSeconds(Atkspd/4);
+        projectile.SetActive(false);
+        yield return new WaitForSeconds((Atkspd/4)*3);
         coroutineRunning = false;
     }
     private void LookAt()

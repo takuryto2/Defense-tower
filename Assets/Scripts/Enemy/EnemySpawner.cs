@@ -5,7 +5,7 @@ using UnityEngine.Serialization;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public Path path;
+    [FormerlySerializedAs("path")] public EnemyPath enemyPath;
     [SerializeField] private List<GameObject> enemys;
     [SerializeField] private List<int> enemysAvailable;
     [SerializeField] private int enemysToSpawn;
@@ -25,8 +25,8 @@ public class EnemySpawner : MonoBehaviour
             GameObject enemySpawned = Instantiate(enemys[Random.Range(0, enemys.Count - 1)], transform.position, Quaternion.identity, this.transform);
             
             Enemy eS = enemySpawned.GetComponent<Enemy>();
-            eS.path = path;
-            eS.nextNode = eS.path.node[0];
+            eS.enemyPath = enemyPath;
+            eS.nextNode = eS.enemyPath.node[0];
 
             yield return new WaitForSeconds(0.5f);
         }

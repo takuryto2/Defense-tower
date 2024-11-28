@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
@@ -11,7 +12,7 @@ public class Enemy : MonoBehaviour
 
     [HideInInspector] public int lastNode;
     [HideInInspector] public Transform nextNode;
-    [HideInInspector] public Path path;
+    [FormerlySerializedAs("path")] [HideInInspector] public EnemyPath enemyPath;
 
     public SO_Enemy SO_Enemy;
     [SerializeField] SpriteRenderer renderer;
@@ -35,9 +36,9 @@ public class Enemy : MonoBehaviour
             lastNode++;
             if(lastNode == 7)
             {
-                nextNode = path.endNode;
+                nextNode = enemyPath.endNode;
             }
-            nextNode = path.node[lastNode];
+            nextNode = enemyPath.node[lastNode];
         }
     }
 

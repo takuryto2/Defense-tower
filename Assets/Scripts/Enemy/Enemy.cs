@@ -22,8 +22,6 @@ public class Enemy : MonoBehaviour
         spd = SO_Enemy.spd;
         atk = SO_Enemy.atk;
         gold = SO_Enemy.gold;
-
-        nextNode = path.node[0];
     }
 
 

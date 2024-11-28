@@ -13,4 +13,12 @@ public class
             health -= other.GetComponent<Enemy>().atk;
         }
     }
+    public void addMoney(int amount)
+    {
+        money += amount;
+    }
+    public void withdrawMoney(int amount)
+    {
+        money -= amount;
+    }
 }

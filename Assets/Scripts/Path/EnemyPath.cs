@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Path : MonoBehaviour
+public class EnemyPath : MonoBehaviour
 {
     public Transform startNode;
     public Transform[] node;

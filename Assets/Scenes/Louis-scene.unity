@@ -472,6 +472,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 452000512208408974, guid: 6d78d1fe70de0534f8f94ef56c4d4414, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 729321734549185842, guid: 6d78d1fe70de0534f8f94ef56c4d4414, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -515,6 +519,18 @@ PrefabInstance:
     - target: {fileID: 1796700862594730565, guid: 6d78d1fe70de0534f8f94ef56c4d4414, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3068484430384691127, guid: 6d78d1fe70de0534f8f94ef56c4d4414, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490081146421190336, guid: 6d78d1fe70de0534f8f94ef56c4d4414, type: 3}
+      propertyPath: m_Radius
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5895617411152698757, guid: 6d78d1fe70de0534f8f94ef56c4d4414, type: 3}
+      propertyPath: m_Name
+      value: Mortar
       objectReference: {fileID: 0}
     - target: {fileID: 7121038628100792623, guid: 6d78d1fe70de0534f8f94ef56c4d4414, type: 3}
       propertyPath: isPochita

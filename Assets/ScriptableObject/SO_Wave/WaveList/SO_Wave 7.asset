@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59e81bb35956d5b4aa84baef375cfa44, type: 3}
   m_Name: SO_Wave 7
   m_EditorClassIdentifier: 
-  nbEnemy: 08000000
+  nbEnemy: 14000000
   enemy:
-  - {fileID: 867145823267821545, guid: 8a209c4b6fe64aa44b98bace7c645b8e, type: 3}
+  - {fileID: 8537415494267526291, guid: 8a209c4b6fe64aa44b98bace7c645b8e, type: 3}

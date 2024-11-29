@@ -53,7 +53,7 @@ MonoBehaviour:
   gold: 0
   lastNode: 0
   nextNode: {fileID: 0}
-  path: {fileID: 0}
+  enemyPath: {fileID: 0}
   SO_Enemy: {fileID: 11400000, guid: 9b84f23b50a2b11478ca483e6312debd, type: 2}
   renderer: {fileID: 1649444474856074026}
 --- !u!61 &8325484269734438757
@@ -100,7 +100,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 0.75, y: 0.75}
   m_EdgeRadius: 0
 --- !u!50 &2809456933805051369
 Rigidbody2D:

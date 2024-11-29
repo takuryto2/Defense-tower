@@ -53,7 +53,7 @@ MonoBehaviour:
   gold: 0
   lastNode: 0
   nextNode: {fileID: 0}
-  path: {fileID: 0}
+  enemyPath: {fileID: 0}
   SO_Enemy: {fileID: 11400000, guid: 17d1eebe83b977c4480f511ae986438e, type: 2}
   renderer: {fileID: 1649444474856074026}
 --- !u!61 &1298679448307369050
@@ -100,7 +100,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 0.25, y: 0.25}
   m_EdgeRadius: 0
 --- !u!50 &6024818813133988773
 Rigidbody2D:
@@ -205,7 +205,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -4,5 +4,5 @@ using UnityEngine;
 public class SO_Wave : ScriptableObject
 {
     public int[] nbEnemy;
-    public Enemy[] enemy;
+    public GameObject[] enemy;
 }

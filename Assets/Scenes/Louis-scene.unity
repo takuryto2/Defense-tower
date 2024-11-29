@@ -164,11 +164,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPath: {fileID: 1008795196}
-  enemys:
-  - {fileID: 8537415494267526291, guid: 8a209c4b6fe64aa44b98bace7c645b8e, type: 3}
-  enemysAvailable: 32000000
+  enemys: []
+  enemysAmount: 
   enemysToSpawn: 5
-  timeBetweenSpawns: 3
+  timeBetweenSpawns: 5
+  timeBetweenGroups: 3
+  waveManager: {fileID: 947897839}
 --- !u!1 &244785339
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,17 +556,17 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: de994bb8ad2f7ae42a72835b70cc9bb8, type: 3}
-  m_Resource: {fileID: 8300000, guid: de994bb8ad2f7ae42a72835b70cc9bb8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: cfb309f515ec6b54a806275c61058aab, type: 3}
+  m_Resource: {fileID: 8300000, guid: cfb309f515ec6b54a806275c61058aab, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.214
+  m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 2.09
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
@@ -856,8 +857,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36bb9ae219b28d043a6d7c6f1d634a4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nbWave: 0
+  currentWave: 0
   waves: {fileID: 11400000, guid: e9ea84e084834ca43bc8f2f053744d98, type: 2}
+  enemySpawner: {fileID: 226432258}
 --- !u!4 &947897840
 Transform:
   m_ObjectHideFlags: 0

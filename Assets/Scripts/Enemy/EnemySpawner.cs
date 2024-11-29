@@ -6,30 +6,43 @@ using UnityEngine.Serialization;
 public class EnemySpawner : MonoBehaviour
 {
     [FormerlySerializedAs("path")] public EnemyPath enemyPath;
-    [SerializeField] private List<GameObject> enemys;
-    [SerializeField] private List<int> enemysAvailable;
+    public List<GameObject> enemys;
+    public List<int> enemysAmount;
     [SerializeField] private int enemysToSpawn;
     [SerializeField] private float timeBetweenSpawns;
+    [SerializeField] private float timeBetweenGroups;
+    [SerializeField] private WaveManager waveManager;
 
     private void Start()
     {
-        StartCoroutine(spawnEnemies());
+        //StartCoroutine(spawnEnemies());
     }
 
-    private IEnumerator spawnEnemies()
+    public IEnumerator spawnEnemies()
     {
-        for (int i = 0; i < enemysToSpawn; i++)
+        Debug.Log("Spawning has commenced");
+        for(int i = 0; i < enemys.Count; i++)
         {
-            Debug.Log("spawn");
+            Debug.Log(i);
+            for (int j = 0; j < enemysAmount[i]; j++)
+            {
+                Debug.Log(j);
 
-            GameObject enemySpawned = Instantiate(enemys[Random.Range(0, enemys.Count - 1)], transform.position, Quaternion.identity, this.transform);
-            
-            Enemy eS = enemySpawned.GetComponent<Enemy>();
-            eS.enemyPath = enemyPath;
-            eS.nextNode = eS.enemyPath.node[0];
+                Debug.Log("spawn");
 
-            yield return new WaitForSeconds(0.5f);
+                GameObject enemySpawned = Instantiate(enemys[i], transform.position, Quaternion.identity, this.transform);
+                
+                Enemy eS = enemySpawned.GetComponent<Enemy>();
+                eS.enemyPath = enemyPath;
+                eS.nextNode = eS.enemyPath.node[0];
+
+                yield return new WaitForSeconds(0.5f);
+            }
+
+            yield return new WaitForSeconds(timeBetweenGroups);
         }
         yield return new WaitForSeconds(timeBetweenSpawns);
+
+        waveManager.WaveEnd();
     }
 }

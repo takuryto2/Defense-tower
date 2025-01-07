@@ -1,18 +1,16 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.UI;
-
 public class Enemy : MonoBehaviour
 {
     [HideInInspector] public int hp;
     [HideInInspector] public float spd;
     [HideInInspector] public int atk;
     [HideInInspector] public int gold;
+    private MainTower tower;
 
     [HideInInspector] public int lastNode;
     [HideInInspector] public Transform nextNode;
-    [FormerlySerializedAs("path")] [HideInInspector] public EnemyPath enemyPath;
+    [HideInInspector] public EnemyPath enemyPath;
 
     public SO_Enemy SO_Enemy;
     [SerializeField] SpriteRenderer renderer;
@@ -23,6 +21,7 @@ public class Enemy : MonoBehaviour
         spd = SO_Enemy.spd;
         atk = SO_Enemy.atk;
         gold = SO_Enemy.gold;
+        tower = SO_Enemy.MainTower.GetComponent<MainTower>();
     }
 
 
@@ -46,6 +45,7 @@ public class Enemy : MonoBehaviour
     {
         hp -= damage;
         if (hp <= 0) {
+            tower.addMoney(gold);
             Destroy(gameObject);
         }
         StartCoroutine(ChangeColor());

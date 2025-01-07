@@ -1,18 +1,19 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class Sawblade : MonoBehaviour
 {
-    [SerializeField] private int Atk;
-    [SerializeField] private float turnSpeed;
+    public int Atk;
+    public float TurnSpeed;
     [SerializeField] private float animTurnSpeed;
     [SerializeField] private GameObject blade;
     [SerializeField] private GameObject pochita;
     [SerializeField] private bool isPochita;
 
     private void FixedUpdate() {
-        transform.Rotate(0, 0, turnSpeed);
+        transform.Rotate(0, 0, TurnSpeed);
         if (!isPochita)
         {
             blade.SetActive(true);

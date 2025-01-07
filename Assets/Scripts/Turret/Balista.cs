@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Balista : MonoBehaviour
 {
-    [SerializeField] private int Atk;
-    [SerializeField] private float Atkspd;
+    public int Atk;
+    public float Atkspd;
     [SerializeField] private float minRange;
     [SerializeField] private float maxRange;
     [SerializeField] private GameObject projectile;

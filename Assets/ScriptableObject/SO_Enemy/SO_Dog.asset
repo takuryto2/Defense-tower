@@ -16,3 +16,4 @@ MonoBehaviour:
   atk: 2
   spd: 5
   gold: 5
+  MainTower: {fileID: 28231990168442755, guid: 6d78d1fe70de0534f8f94ef56c4d4414, type: 3}

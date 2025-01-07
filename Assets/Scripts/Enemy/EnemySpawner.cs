@@ -27,9 +27,9 @@ public class EnemySpawner : MonoBehaviour
             Debug.Log(i);
             for (int j = 0; j < enemysAmount[i]; j++)
             {
-                Debug.Log(j);
+                //Debug.Log(j);
 
-                Debug.Log("spawn");
+                //Debug.Log("spawn");
 
                 GameObject enemySpawned = Instantiate(enemys[i], transform.position, Quaternion.identity, this.transform);
                 

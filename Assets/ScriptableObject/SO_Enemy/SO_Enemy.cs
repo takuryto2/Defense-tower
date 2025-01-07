@@ -7,4 +7,5 @@ public class SO_Enemy : ScriptableObject
     public int atk;
     public float spd;
     public int gold;
+    public GameObject MainTower;
 }

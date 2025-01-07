@@ -1,12 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class Mortar : MonoBehaviour
 {
-    [SerializeField] private int Atk;
-    [SerializeField] private float Atkspd;
+    public int Atk;
+    public float Atkspd;
     [SerializeField] private float minRange;
     [SerializeField] private float maxRange;
     [SerializeField] private float aoeRadius;
